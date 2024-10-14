@@ -1,0 +1,31 @@
+databaseChangeLog:
+  - changeSet:
+      id:  create-table-product
+      author:  Arrelin
+      labels: init-label
+      context: first migration
+      comment: pls work
+      changes:
+        - createTable:
+            tableName:  person
+            columns:
+              - column:
+                  name:  id
+                  type:  bigint
+                  autoIncrement:  true
+                  constraints:
+                    primaryKey:  true
+                    nullable:  false
+              - column:
+                  name:  name
+                  type:  varchar(255)
+                  constraints:
+                    nullable:  false
+              - column:
+                  name:  description
+                  type:  text
+              - column:
+                  name:  price
+                  type:  decimal(19,2)
+                  constraints:
+                    nullable: false
