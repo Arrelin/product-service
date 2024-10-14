@@ -7,7 +7,7 @@ databaseChangeLog:
       comment: pls work
       changes:
         - createTable:
-            tableName:  person
+            tableName:  product
             columns:
               - column:
                   name:  id
@@ -30,14 +30,14 @@ databaseChangeLog:
                   constraints:
                     nullable: false
   - changeSet:
-      id:  insert-into-person
+      id:  insert-into-product
       author:  Arrelin
       labels: init-label
       context: first migration
       comment: pls work
       changes:
         - insert:
-            tableName:  person
+            tableName:  product
             columns:
               - column:
                   name:  id
