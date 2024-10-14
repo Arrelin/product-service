@@ -29,3 +29,25 @@ databaseChangeLog:
                   type:  decimal(19,2)
                   constraints:
                     nullable: false
+  - changeSet:
+      id:  insert-into-person
+      author:  Arrelin
+      labels: init-label
+      context: first migration
+      comment: pls work
+      changes:
+        - insert:
+            tableName:  person
+            columns:
+              - column:
+                  name:  id
+                  value:  1
+              - column:
+                  name:  name
+                  value:  'Arrelin'
+              - column:
+                  name:  description
+                  value:  'A cool guy'
+              - column:
+                  name:  price
+                  value: 320000.00
