@@ -39,4 +39,18 @@ public class ProductService {
                 product.getDescription(),
                 product.getPrice())).toList();
     }
+
+    public ProductResponse getProductById(Long id) {
+        Product product = productRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Product not found"));
+        return new ProductResponse(
+                product.getId(),
+                product.getName(),
+                product.getDescription(),
+                product.getPrice());
+    }
+
+    public void deleteProduct(Product product) {
+            productRepository.deleteById(product.getId());
+    }
 }
